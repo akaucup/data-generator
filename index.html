@@ -14,10 +14,21 @@
       crossorigin="anonymous"
     />
   </head>
-  <body class="d-flex p-3 m-3">
+  <body class="d-flex p-2 m-2">
     <div class="container">
       <h1>Random Data Generator</h1>
       <hr />
+      <div class="alert alert-dark input-group d-flex">
+        <div class="flex-fill">
+          <textarea
+            placeholder="Enter a list of names separated by new line (Opsional)"
+            id="nameListInput"
+            name="nameListInput"
+            class="form-control"
+            rows="2"
+          ></textarea>
+        </div>
+      </div>
       <div class="alert alert-dark input-group d-flex">
         <div class="p-1">
           <button
@@ -45,21 +56,14 @@
             <option value="@yahoo.com">yahoo.com</option>
           </select>
         </div>
+        <div class="p-1">
+          <button id="generateBtn" class="btn btn-warning">Generate</button>
+          </div>
       </div>
-      <div class="alert alert-dark input-group d-flex">
-        <div class="p-1 flex-fill">
-          <textarea
-            placeholder="Enter a list of names separated by new line (Opsional)"
-            id="nameListInput"
-            name="nameListInput"
-            class="form-control"
-            rows="3"
-          ></textarea>
-        </div>
-      </div>
-      <div class="d-flex flex-column mb-3">
+
+      <div class="d-flex flex-column">
         <div
-          class="m-1 justify-content-between alert alert-danger d-flex align-items-center"
+          class="justify-content-between alert alert-danger d-flex align-items-center"
         >
           <label class="" for="firstNameOutput" id="firstNameOutput"
             >Firstname here</label
@@ -68,46 +72,53 @@
           <button id="copyFirstNameBtn" class="btn btn-danger">Copy</button>
         </div>
         <div
-          class="m-1 justify-content-between alert alert-success d-flex align-items-center"
+          class="justify-content-between alert alert-success d-flex align-items-center"
         >
           <label for="lastNameOutput" id="lastNameOutput">Lastname here</label>
           <!--span id="lastNameOutput"></span-->
           <button id="copyLastNameBtn" class="btn btn-success">Copy</button>
         </div>
         <div
-          class="m-1 justify-content-between alert alert-info d-flex align-items-center"
+          class="justify-content-between alert alert-info d-flex align-items-center"
         >
           <label for="usernameOutput" id="usernameOutput">Username here</label>
           <!--output id="usernameOutput"></output-->
           <button id="usernameBtn" class="btn btn-info">Copy</button>
         </div>
         <div
-          class="m-1 justify-content-between alert alert-warning d-flex align-items-center"
+          class="text-wrap justify-content-between alert alert-warning d-flex align-items-center"
         >
           <label for="emailOutput" id="emailOutput">Email here</label>
           <!--span id="emailOutput"></span-->
           <button id="copyEmailBtn" class="btn btn-warning">Copy</button>
         </div>
         <div
-          class="m-1 justify-content-between alert alert-info d-flex align-items-center"
+          class="justify-content-between alert alert-info d-flex align-items-center"
         >
           <label for="phoneOutput" id="phoneOutput">Phone here</label>
           <!--span id="phoneOutput"></span-->
           <button id="copyPhoneBtn" class="btn btn-info">Copy</button>
         </div>
-        <div
-          class="m-1 justify-content-between alert alert-info d-flex align-items-center"
-        >
-          <label for="dataOutput" id="dataOutput">Full Data here</label>
-          <!--span id="dataOutput"></span-->
-          <button id="copyDataBtn" class="btn btn-info">Copy</button>
+        <div class="alert alert-dark input-group d-flex">
+          <div class="flex-fill">
+            <textarea
+            placeholder="Enter a list of names separated by new line (Opsional)"
+            id="dataOutput"
+            name="dataOutput"
+            class="form-control"
+            rows="2"
+          ></textarea>
+          </div>
+          <div class="p-1">
+            <button class="btn btn-dark" onclick="copyDataOutput()">Copy</button>
+          </div>
         </div>
       </div>
 
       <!--div class="container text-center"-->
       <div class="d-flex justify-content-center"></div>
       <div class="d-grid gap-2">
-        <button id="generateBtn" class="btn btn-warning">Generate</button>
+        
         <!--button id="resetButton" class="btn btn-danger">Reset</button-->
         <div
           class="modal fade"
