@@ -19,7 +19,7 @@
       <h1>Random Data Generator</h1>
       <hr />
       <div class="alert alert-dark input-group d-flex">
-        <div class="flex-fill">
+        <div class="p-1 w-100">
           <textarea
             placeholder="Enter a list of names separated by new line (Opsional)"
             id="nameListInput"
@@ -28,8 +28,6 @@
             rows="2"
           ></textarea>
         </div>
-      </div>
-      <div class="alert alert-dark input-group d-flex">
         <div class="p-1 flex-fill">
           <input
             placeholder="3 digit kode operator default 812"
@@ -38,9 +36,9 @@
             class="form-control"
           />
         </div>
-        <div class="p-1 flex-fill">
+        <div class="p-1 flex-shrink-1">
           <input
-            placeholder="Use your Password or leave it blank"
+            placeholder="Password"
             id="passwordInput"
             class="form-control"
             name="passwordInput"
@@ -57,7 +55,7 @@
         </div>
         <div class="p-1">
           <button
-            class="btn btn-dark"
+            class="btn btn btn-outline-secondary"
             data-bs-toggle="modal"
             data-bs-target="#kodeOperator"
           >
@@ -65,7 +63,7 @@
           </button>
         </div>
         <div class="p-1">
-          <button id="generateBtn" class="btn btn-warning">Generate</button>
+          <button id="generateBtn" class="btn btn-warning opacity-75">Generate</button>
         </div>
       </div>
       <div class="alert alert-dark input-group d-flex">
