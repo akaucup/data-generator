@@ -39,6 +39,14 @@
           />
         </div>
         <div class="p-1 flex-fill">
+          <input
+            placeholder="Password"
+            id="passwordInput"
+            class="form-control"
+            name="passwordInput"
+          />
+        </div>
+        <div class="p-1 flex-fill">
           <select class="form-select" id="domainSelect" name="domainSelect">
             <option value="@outlook.com">outlook.com</option>
             <option value="@hotmail.com">hotmail.com</option>
@@ -58,10 +66,22 @@
         </div>
         <div class="p-1">
           <button id="generateBtn" class="btn btn-warning">Generate</button>
-          </div>
+        </div>
       </div>
 
       <div class="d-flex flex-column">
+        <div
+          class="justify-content-between alert alert-danger d-flex align-items-center"
+        >
+          <button id="copyFirstNameBtn" class="btn btn-danger">Copy Firstname</button
+          ><button id="copyLastNameBtn" class="btn btn-success">Copy Lastname</button
+          ><button id="copyUsernameBtn" class="btn btn-info">Copy Username</button
+          ><button id="copyEmailBtn" class="btn btn-warning">Copy Email</button
+          ><button id="copyPhoneBtn" class="btn btn-info">Copy Phone</button>
+          <button id="copyPasswordBtn" class="btn btn-warning">
+            Copy Password
+          </button>
+        </div>
         <div
           class="justify-content-between alert alert-danger d-flex align-items-center"
         >
@@ -69,48 +89,47 @@
             >Firstname here</label
           >
           <!--span id="firstNameOutput"></span-->
-          <button id="copyFirstNameBtn" class="btn btn-danger">Copy</button>
         </div>
         <div
           class="justify-content-between alert alert-success d-flex align-items-center"
         >
           <label for="lastNameOutput" id="lastNameOutput">Lastname here</label>
-          <!--span id="lastNameOutput"></span-->
-          <button id="copyLastNameBtn" class="btn btn-success">Copy</button>
         </div>
         <div
           class="justify-content-between alert alert-info d-flex align-items-center"
         >
           <label for="usernameOutput" id="usernameOutput">Username here</label>
-          <!--output id="usernameOutput"></output-->
-          <button id="usernameBtn" class="btn btn-info">Copy</button>
         </div>
         <div
           class="text-wrap justify-content-between alert alert-warning d-flex align-items-center"
         >
           <label for="emailOutput" id="emailOutput">Email here</label>
-          <!--span id="emailOutput"></span-->
-          <button id="copyEmailBtn" class="btn btn-warning">Copy</button>
         </div>
         <div
           class="justify-content-between alert alert-info d-flex align-items-center"
         >
           <label for="phoneOutput" id="phoneOutput">Phone here</label>
-          <!--span id="phoneOutput"></span-->
-          <button id="copyPhoneBtn" class="btn btn-info">Copy</button>
+        </div>
+        <div
+          class="text-wrap justify-content-between alert alert-warning d-flex align-items-center"
+        >
+          <label for="passwordOutput" id="passwordOutput">Password here</label>
         </div>
         <div class="alert alert-dark input-group d-flex">
-          <div class="flex-fill">
+          <div class="flex-fill ">
             <textarea
-            placeholder="Enter a list of names separated by new line (Opsional)"
-            id="dataOutput"
-            name="dataOutput"
-            class="form-control"
-            rows="2"
-          ></textarea>
+              placeholder="Enter a list of names separated by new line (Opsional)"
+              id="dataOutput"
+              name="dataOutput"
+              class=" form-control"
+              rows="2"
+              readonly
+            ></textarea>
           </div>
           <div class="p-1">
-            <button class="btn btn-dark" onclick="copyDataOutput()">Copy</button>
+            <button class="btn btn-dark" onclick="copyDataOutput()">
+              Copy
+            </button>
           </div>
         </div>
       </div>
@@ -118,7 +137,6 @@
       <!--div class="container text-center"-->
       <div class="d-flex justify-content-center"></div>
       <div class="d-grid gap-2">
-        
         <!--button id="resetButton" class="btn btn-danger">Reset</button-->
         <div
           class="modal fade"
