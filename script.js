@@ -20,8 +20,8 @@ const copyDataBtn = document.getElementById("copyDataBtn");
 
 
 // Define arrays of possible names
-let firstNameList = ["Rizka", "Yani", ];
-let lastNameList = ["Yola","Nada"];
+let firstNameList = ['Anisa','Dian','Fitri','Hana','Ika','Jasmine','Kiki','Lina','Maya','Nadia','Ratna','Sari','Tika','Vina','Yanti','Ayu','Dewi','Eka','Fira','Gita','Hesti','Ina','Juli','Kartika','Linda','Mira','Nia','Oktavia','Putri','Ratih','Tari','Ulya','Vivi','Wulan','Yeni','Zahra','Aida','Bella','Citra','Dina','Elsa','Fanny','Gina','Hesty','Indah','Jihan','Kamila','Laras','Mega','Nita','Okta','Puti','Siska','Tasya','Umi','Viona','Winda','Yulia','Zara','Agnes','Bunga','Cindy','Evi','Fitria','Heni','Intan','Juwita','Lusiana','Mala','Novi','Olive','Pratiwi','Riana','Tania','Ulfa','Vania','Yolanda','Zalfa','Aisyah','Cici','Desi','Febri','Gisel','Indri','Kania','Mila','Nindy','Rizki','Tia','Vita','Windy','Adila','Desy','Eris','Fania','Gladys','Helena','Inas','Jasmina','Larasati','Mutiara','Olivya','Prilly','Rini','Sinta','Widya','Yunita','Zalika','Almira','Chika','Dinda','Elly','Fida','Aldila','Celine','Dwi'];
+let lastNameList = ['Ningsih','Wijaya','Sari','Nugraha','Kusuma','Setiawan','Permatasari','Putri','Haryanti','Ramadhani','Lestari','Pertiwi','Maulida','Dewi','Fauzia','Andriani','Ayu','Budiman','Cahyadi','Dewanti','Ernawati','Febriani','Ginting','Hapsari','Ismail','Juwita','Kusumawardhani','Nurfitriyani','Oktaviani','Qonita','Rahmawati','Triana','Utami','Vani','Wahyuni','Yusuf','Zahro','Abdullah','Basyir','Cahyaningrum','Fatmawati','Harahap','Jannah','Nuraini','Purba','Nurhayati','Wulandari','Kurniawati','Permata','Safitri','Iswari','Fajrin','Pratiwi','Laksita','Lubis','Septiani','Mardhiyah','Larasati','Wibowo','Kurniawan','Fithriani','Purnama','Azalia','Lutfiana','Syarifah','Budiyanti','Kusumawati','Suharyati','Tirta','Murdianti','Cahyati','Rahayu','Kusumaningrum','Purwanti','Maulidina','Rachmawati','Indriyani','Suryawati','Mukti','Arista','Prayoga','Puspita','Anggraini','Aryanti']
 // Generate random password
 function generateRandomPassword(length) {
   let password = "";
