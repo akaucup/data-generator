@@ -74,7 +74,7 @@ function generateRandomName() {
   usernameOutput.innerText = randomUsername;
   emailOutput.innerText = randomUsername + domainSelect.value;
   passwordOutput.innerText = password;
-  dataOutput.innerText = randomFirstName +"|"+ randomLastName +"|"+ randomUsername +"|"+ randomUsername + domainSelect.value +"|"+ phoneNumber +"|" + password;
+  dataOutput.innerText = randomFirstName +" "+ randomLastName +"|"+ randomUsername +"|"+ randomUsername + domainSelect.value +"|"+ phoneNumber +"|" + password;
 
 }
 
