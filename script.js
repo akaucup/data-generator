@@ -1,3 +1,15 @@
+// Membuat variabel untuk menyimpan status apakah popup sudah ditampilkan atau belum
+let popupShown = sessionStorage.getItem('popupShown');
+
+// Mengecek apakah popup sudah ditampilkan atau belum
+if (!popupShown) {
+  // Menampilkan popup peringatan
+  $('#warningModal').modal('show');
+  
+  // Mengubah status popupShown menjadi true
+  sessionStorage.setItem('popupShown', true);
+}
+
 // Get elements from the HTML page
 const nameListInput = document.getElementById("nameListInput");
 const passwordInput = document.getElementById("passwordInput");
