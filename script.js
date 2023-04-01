@@ -1,14 +1,20 @@
-// Membuat variabel untuk menyimpan status apakah popup sudah ditampilkan atau belum
-let popupShown = sessionStorage.getItem('popupShown');
+// Menunggu hingga halaman dimuat
+window.addEventListener('load', () => {
+  // Mengecek apakah modal sudah ditampilkan sebelumnya
+  let isModalShown = localStorage.getItem('isModalShown');
+  if (!isModalShown) {
+    // Mencari elemen modal
+    const modal = document.getElementById('warningModal');
+    
+    // Menampilkan modal
+    const bootstrapModal = new bootstrap.Modal(modal);
+    bootstrapModal.show();
 
-// Mengecek apakah popup sudah ditampilkan atau belum
-if (!popupShown) {
-  // Menampilkan popup peringatan
-  $('#warningModal').modal('show');
-  
-  // Mengubah status popupShown menjadi true
-  sessionStorage.setItem('popupShown', true);
-}
+    // Menandai bahwa modal sudah ditampilkan
+    localStorage.setItem('isModalShown', true);
+  }
+});
+
 
 // Get elements from the HTML page
 const nameListInput = document.getElementById("nameListInput");
