@@ -17,22 +17,56 @@
     <link rel="stylesheet" href="style.css" type="text/css" />
   </head>
   <body class="m-1" style="font-family: 'Poppins', sans-serif">
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#warningModal"> Launch demo modal </button>
+        <!-- Button trigger modal -->
+    <button
+      type="button"
+      class="btn btn-primary d-none"
+      data-bs-toggle="modal"
+      data-bs-target="#warningModal"
+    >
+      Launch demo modal
+    </button>
     <!-- Modal -->
-    <div class="modal fade" id="warningModal" tabindex="-1" aria-labelledby="warningModalLabel" aria-hidden="true">
+    <div
+      class="modal fade"
+      id="warningModal"
+      tabindex="-1"
+      aria-labelledby="warningModalLabel"
+      aria-hidden="true"
+    >
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="warningModalLabel">Peringatan!</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            
+            <h5 class="modal-title" id="warningModalLabel"><i class="fa fa-exclamation-triangle icon" aria-hidden="true"></i>
+              Warning!</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
           </div>
           <div class="modal-body">
-            <p>Isi peringatan di sini.</p>
+            <p>
+              Click generate twice for the first time to generate Month / Day /
+              Year or you can choose your own Date. This popup will not shown
+              again after you click close button.
+            </p>
+            <p>
+              klik generate untuk melakukan generate Bulan/Hari/Tahun atau anda
+              bisa input tanggal anda sendiri. Popup ini tidak akan tidak
+              ditampilkan lagi setelah anda klik tombol tutup.
+            </p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> Tutup </button>
-            <button type="button" class="btn btn-primary"> Simpan Perubahan </button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
           </div>
         </div>
       </div>
