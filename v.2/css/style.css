@@ -15,3 +15,15 @@ td {
   font-size: 25px;
 }
 /* https://pageuid.netlify.app/?id=1 untuk membuat identifikasi chrome */
+.toast {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: auto;
+  margin: auto;
+  min-width: 350px;
+  max-width: 500px;
+  border-radius: 5px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
