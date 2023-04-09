@@ -207,5 +207,13 @@ function generateData() {
   });
 }
 
+const btnClearHistory = document.getElementById("btnClearHistory");
+
+btnClearHistory.addEventListener("click", function() {
+  localStorage.removeItem("dataList");
+  location.reload();
+});
+
+
 const btnGenerate = document.getElementById("btnGenerate");
 btnGenerate.addEventListener("click", generateData);
