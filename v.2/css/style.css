@@ -1,0 +1,17 @@
+* {
+  font-family: "Poppins", sans-serif;
+}
+p{
+  font-size: small;
+}
+.txt {
+  color: var(--bs-light-text-emphasis);
+}
+td {
+  white-space: normal !important;
+  word-wrap: break-word;
+}
+.social{
+  font-size: 25px;
+}
+/* https://pageuid.netlify.app/?id=1 untuk membuat identifikasi chrome */
