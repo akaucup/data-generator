@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="thumbnail"
+      content="https://images.pexels.com/photos/4348401/pexels-photo-4348401.jpeg?auto=compress&cs=tinysrgb&w=1600"
+    />
+    <meta
+      name="description"
+      content="Random Data Generator adalah alat online yang memungkinkan Anda menghasilkan data acak dalam berbagai format, seperti nama, alamat, nomor telepon, email, dan banyak lagi. Dengan alat ini, Anda dapat menghasilkan data acak dalam jumlah besar untuk keperluan pengujian, pengembangan, atau keperluan pribadi. Coba sekarang dan hasilkan data acak dengan mudah dan cepat!"
+    />
+    <meta
+      name="keywords"
+      content="generator data, fakename , nama generate, situs nama, generator nama, generator nama indonesia"
+    />
+    <meta name="author" content="@adverFI" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/src/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/src/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/src/favicon-16x16.png"
+    />
+    <link rel="manifest" href="assets/src/site.webmanifest" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css"
+    />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+      integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      defer
+      src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"
+      integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <title>Random Data Generator</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="assets/src/favicon-16x16.png" /> AdverFi
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarText"
+            aria-controls="navbarText"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <!--li class="nav-item"><a class="nav-link" href="#">Features</a></li-->
+              <li class="nav-item">
+                <button
+                  type="button"
+                  class="nav-link"
+                  data-bs-toggle="modal"
+                  data-bs-target="#providercode"
+                  data-text="providercode"
+                >
+                  Provider List
+                </button>
+              </li>
+              <li class="nav-item dropdown" id="bd-theme-text">
+                <span class="navbar-text">
+                  <div class="dropdown">
+                    <button
+                      class="btn dropdown-toggle"
+                      type="button"
+                      id="exportDropdown"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Export Data
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="exportDropdown">
+                      <li>
+                        <a class="dropdown-item" onclick="exportToCsv()"
+                          >Export to CSV</a
+                        >
+                      </li>
+                      <li>
+                        <a class="dropdown-item" onclick="exportToJson()"
+                          >Export to JSON</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </span>
+              </li>
+            </ul>
+
+            <span class="navbar-text">
+              <ul class="nav"></ul>
+            </span>
+
+            <span class="navbar-text">
+              <ul class="nav">
+                <li class="nav-item dropdown" id="bd-theme-text">
+                  <span class="navbar-text">
+                    <button
+                      class="nav-link btn btn-secondary dropdown-toggle"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      <i
+                        class="bi bi-sun-fill theme-icon-active"
+                        data-theme-icon-active="bi-sun-fill"
+                      ></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <button
+                          class="dropdown-item d-flex align-items-center"
+                          type="button"
+                          data-bs-theme-value="light"
+                        >
+                          <i
+                            class="bi bi-sun-fill me-2 opacity-50"
+                            data-theme-icon="bi-sun-fill"
+                          ></i>
+                          light
+                        </button>
+                      </li>
+                      <li>
+                        <button
+                          class="dropdown-item d-flex align-items-center"
+                          type="button"
+                          data-bs-theme-value="dark"
+                        >
+                          <i
+                            class="bi bi-moon-stars-fill me-2 opacity-50"
+                            data-theme-icon="bi-moon-stars-fill"
+                          ></i>
+                          dark
+                        </button>
+                      </li>
+                      <li>
+                        <button
+                          class="dropdown-item d-flex align-items-center"
+                          type="button"
+                          data-bs-theme-value="auto"
+                        >
+                          <i
+                            class="bi bi-circle-half me-2 opacity-50"
+                            data-theme-icon="bi-circle-half"
+                          ></i>
+                          auto
+                        </button>
+                      </li>
+                    </ul>
+                  </span>
+                </li>
+              </ul>
+            </span>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div
+      class="container d-flex flex-column justify-content-between position-fixed start-50 translate-middle"
+      style="z-index: 11"
+    >
+      <div
+        class="toast align-items-center text-white bg-danger"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="false"
+        data-bs-delay="1500"
+      >
+        <div class="d-flex">
+          <div class="toast-body">Deleted successfully!</div>
+          <button
+            type="button"
+            class="btn-close me-2 m-auto"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+      </div>
+      <div
+        class="toast align-items-center text-white bg-success"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+        data-bs-delay="1500"
+      >
+        <div class="d-flex">
+          <div class="toast-body">Generated successfully!</div>
+          <button
+            type="button"
+            class="btn-close me-2 m-auto"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+      </div>
+    </div>
+    <div class="container d-flex flex-column justify-content-between">
+      <div>
+        <div class="alert alert-dark input-group d-flex">
+          <div class="text-center w-100">
+            <h6 class="text-center">Action</h6>
+            <button
+              type="button"
+              class="btn btn-primary btn-sm"
+              id="btnGenerate"
+            >
+              Generate
+            </button>
+            <button
+              type="button"
+              class="btn btn-success btn-sm"
+              id="btnCopyAll"
+            >
+              Copy Result
+            </button>
+            <button
+              class="btn btn-warning btn-sm"
+              id="btnClearHistory"
+              type="button"
+            >
+              Delete History
+            </button>
+          </div>
+          <div class="m-1 w-100">
+            <h6 class="text-center txt">Data to copy</h6>
+            <div class="input-group d-flex justify-content-center">
+              <div class="m-1">
+                <button
+                  type="button"
+                  class="flex-fill btn btn-danger btn-sm"
+                  id="btnCopyFName"
+                >
+                  Firstname
+                </button>
+              </div>
+              <div class="m-1">
+                <button
+                  type="button"
+                  class="btn btn-secondary btn-sm"
+                  id="btnCopyLName"
+                >
+                  Lastname
+                </button>
+              </div>
+              <div class="m-1">
+                <button
+                  type="button"
+                  class="btn btn-success btn-sm"
+                  id="btnCopyUname"
+                >
+                  Username
+                </button>
+              </div>
+              <div class="m-1">
+                <button
+                  type="button"
+                  class="btn btn-warning btn-sm"
+                  id="btnCopyEmail"
+                >
+                  Email
+                </button>
+              </div>
+              <div class="m-1">
+                <button
+                  type="button"
+                  class="btn btn-info btn-sm"
+                  id="btnCopyPassword"
+                >
+                  Password
+                </button>
+              </div>
+              <div class="m-1">
+                <button
+                  type="button"
+                  class="btn btn-danger btn-sm"
+                  id="btnCopyPhone"
+                >
+                  Phone
+                </button>
+              </div>
+              <div class="m-1">
+                <button
+                  type="button"
+                  class="btn btn-primary btn-sm"
+                  id="btnCopyDate"
+                >
+                  Date
+                </button>
+              </div>
+              <div class="m-1">
+                <button
+                  type="button"
+                  class="btn btn-primary btn-sm"
+                  id="btnCopyMonth"
+                >
+                  Month
+                </button>
+              </div>
+              <div class="m-1">
+                <button
+                  type="button"
+                  class="btn btn-primary btn-sm"
+                  id="btnCopyYear"
+                >
+                  Year
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="alert alert-dark input-group d-flex">
+          <div class="p-1 w-100">
+            <h6 class="text-center">Input your own preference</h6>
+            <textarea
+              class="form-control"
+              placeholder="Input your own name list (separated by line)"
+              name="inputNameList"
+              rows="2"
+              id="inputNameList"
+            ></textarea>
+          </div>
+          <div class="p-1 input-group flex-fill">
+            <button
+              class="bi bi-123 input-group-text"
+              data-bs-toggle="modal"
+              data-bs-target="#providercode"
+              data-text="providercode"
+            ></button>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Provider Code"
+              aria-label="Provider Code"
+              maxlength="3"
+              id="providerCode"
+            />
+          </div>
+          <div class="p-1 flex-fill">
+            <select
+              class="form-select"
+              aria-label="Default selected gmail"
+              id="selectedDomain"
+            >
+              <option value="@gmail.com">Gmail</option>
+              <option value="@outlook.com">Outlook</option>
+              <option value="@hotmail.com">Hotmail</option>
+              <option value="@yahoo.com">Yahoo</option>
+            </select>
+          </div>
+          <div class="p-1 flex-fill">
+            <input type="date" class="form-control" />
+          </div>
+          <div class="p-1 flex-fill">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Password"
+              aria-label="Password"
+              id="inputPassword"
+            />
+          </div>
+        </div>
+        <div class="alert alert-dark input-group d-flex justify-content-center">
+          <div class="p-1 w-100 m-1">
+            <h6 class="text-center">Result</h6>
+            <textarea
+              class="form-control bg-body-tertiary"
+              readonly
+              placeholder="Result will be shown here"
+              id="resultData"
+              rows="1"
+            ></textarea>
+          </div>
+          <!-- end of form -->
+        </div>
+
+        <div class="table-responsive-lg alert alert-dark">
+          <h6 class="text-center">Generate history</h6>
+
+          <br />
+          <table
+            maxrows="10"
+            class="display table table-sm table-striped"
+            id="outputTable"
+          >
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Username</th>
+                <th>DoB</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Password</th>
+              </tr>
+            </thead>
+            <tbody id="dataTable" class="table-group-divider"></tbody>
+          </table>
+        </div>
+        <div class="d-grid gap-2">
+          <div
+            class="modal fade"
+            id="providercode"
+            role="dialog"
+            arialabelledby="modalLabel"
+            aria-hidden="true"
+          >
+            <div
+              class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+              role="document"
+            >
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title mx-2">Provider Code</h4>
+                </div>
+                <div class="modal-body mx-2">
+                  <div class="row">
+                    <div class="col">
+                      <ul class="list-unstyled">
+                        <strong>Telkomsel</strong>
+                        <li>852: AS</li>
+                        <li>853: AS</li>
+                        <li>811: Halo</li>
+                        <li>812: Simpati atau Halo</li>
+                        <li>813: Simpati</li>
+                        <li>821: Simpati</li>
+                        <li>822: Loop</li>
+                        <li>851: By.u</li>
+                        <strong>Tri</strong>
+                        <li>896</li>
+                        <li>895</li>
+                        <li>897</li>
+                        <li>898</li>
+                        <li>899</li>
+                      </ul>
+                    </div>
+                    <div class="col">
+                      <ul class="list-unstyled">
+                        <strong>XL</strong>
+                        <li>817</li>
+                        <li>818</li>
+                        <li>819</li>
+                        <li>859</li>
+                        <li>877</li>
+                        <li>878</li>
+                        <strong>Indosat</strong>
+                        <li>857</li>
+                        <li>856 (limited edition)</li>
+                      </ul>
+                    </div>
+                    <div class="col">
+                      <ul class="list-unstyled">
+                        <strong>AXIS</strong>
+                        <li>813</li>
+                        <li>832</li>
+                        <li>833</li>
+                        <li>838</li>
+                        <strong>Smartfren</strong>
+                        <li>881</li>
+                        <li>882</li>
+                        <li>883</li>
+                        <li>884</li>
+                        <li>885</li>
+                        <li>886</li>
+                        <li>887</li>
+                        <li>888</li>
+                        <li>889</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Tutup
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="alert alert-dark">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-5">
+              <h3>Random Data Generator</h3>
+              <p>
+                Helping you generate complete data randomly, it should be noted
+                that all generated data is random, and if the data is active, it
+                is simply a coincidence.
+              </p>
+            </div>
+            <div class="col-sm-7">
+              <div class="row">
+                <div class="col-8 col-sm-6">
+                  <h5>Our Social</h5>
+                  <p></p>
+                  <a
+                    href="https://p-store.net/AdverFI"
+                    target="_blank"
+                    class="social bi bi-facebook"
+                  ></a>
+                  <a
+                    href="https://p-store.net/AdverFI"
+                    target="_blank"
+                    class="social bi bi-messenger"
+                  ></a>
+                  <a
+                    href="https://p-store.net/AdverFI"
+                    target="_blank"
+                    class="social bi bi-whatsapp"
+                  ></a>
+                  <a
+                    href="https://p-store.net/AdverFI"
+                    target="_blank"
+                    class="social bi bi-instagram"
+                  ></a>
+                </div>
+                <div class="col-4 col-sm-6">
+                  <h5>Visit our Store</h5>
+                  <a
+                    href="https://p-store.net/AdverFI"
+                    target="_blank"
+                    class="bi bi-basket3-fill"
+                  >
+                    Shop</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row text-center">
+            <div class="col-md-12">
+              <p class="fs-6">
+                Copyright © 2021 - <span id="year"></span> adverFI. All rights
+                reserved
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <!-- end of outer div-->
+
+    <!-- script start from here -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      import("./script/script.js")
+        .then((module) => {
+          // Modul telah dimuat, lakukan apa yang diperlukan di sini
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    </script>
+    <script src="script/color.js"></script>
+    <script src="table.js"></script>
+    <script type="module" src="script/script.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script></script>
+  </body>
+</html>
